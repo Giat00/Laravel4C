@@ -6,17 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    // protected $table = 'mahasiswa';
-    // protected $fillable = ['user_id','tgl_lahir','tempat_lahir','telepon','alamat','gender','foto'];
-    protected $table = 'makul';
-    protected $fillable = ['kd_matkul','nama_matkul','sks'];
+    protected $table    = 'mahasiswa';
+    protected $fillable = ['user_id','npm', 'tgl_lahir', 'tempat_lahir', 'telepon', 'alamat', 'gender'];
+    public $timestamps = false;
 
     public function user()
     {
-        return $this->belongsTo(user::class, 'user_id','id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
-
-    
+    public function nilai(){
+        return $this->hasOne(Nilai::class, 'mahasiswa_id','id');
+    }
 }
-
-
