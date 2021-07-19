@@ -33,7 +33,7 @@
                         <td>{{ $mhs->tempat_lahir.', ' .$mhs->tgl_lahir }}</td>
                         <td>{{ $mhs->telepon }}</td>
                         <td>{{ $mhs->alamat }}</td>
-                        <td>{{ $mhs->gender }}</td>
+                        <td>{{ $mhs->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('edit.mahasiswa', $mhs->id) }}" class="btn btn-sm btn-warning">EDIT</a>
